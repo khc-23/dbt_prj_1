@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: raw_data1
+    database: snowflake_learning_db         # optional, can be overridden by environment
+    schema: public
+    tables:
+      - name: src_audit
+        description: "Audit source table manually created in Snowflake"
+        columns:
+          - name: TYPE
+            description: "type defined"
+          - name: inserted
+            description: "inserted defined"
+          - name: updated
+            description: "updated defined"
+          - name: batch_timestamp
+            description: "batch_timestamp defined"
+          - name: latest_table_count
+            description: "latest_table_count defined"
+          - name: action
+            description: "action defined"
+  - name: raw_data2
+    database: "snowflake_sample_data"         # optional, can be overridden by environment
+    schema: "TPCH_SF1"
+    tables:
+      - name: customer
+        description: "customer table exists in Snowflake"
+        columns:
+          - name: "C_CUSTKEY"
+            description: "C_CUSTKEY defined"
+          - name: C_NAME
+            description: "C_NAME defined"
+          - name: C_ADDRESS
+            description: "C_ADDRESS defined"
+          - name: C_NATIONKEY
+            description: "C_NATIONKEY defined"
+          - name: C_PHONE
+            description: "C_PHONE defined"
+          - name: C_ACCTBAL
+            description: "C_ACCTBAL defined"
+          - name: C_MKTSEGMENT
+            description: "C_MKTSEGMENT defined"
+          - name: C_COMMENT
+            description: "C_COMMENT defined"
