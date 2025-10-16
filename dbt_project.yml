@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 vars:
-  tday: 1990
+  ttday: 1990
 
 models:
   my_new_project:
