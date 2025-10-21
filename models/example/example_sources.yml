@@ -2,10 +2,11 @@ version: 2
 
 sources:
   - name: raw_data1
-    database: snowflake_learning_db         # optional, can be overridden by environment
+    database: snowflake_learning_db # optional, can be overridden by environment
     schema: public
     tables:
-      - name: src_audit
+      - name: src_audit # This is the aliased name for the actual table below and we can use the aliased name
+        identifier: src_audit # This is the actual table name and we can use the aliased name given above if we like
         description: "Audit source table manually created in Snowflake"
         columns:
           - name: TYPE
@@ -21,7 +22,7 @@ sources:
           - name: action
             description: "action defined"
   - name: raw_data2
-    database: "snowflake_sample_data"         # optional, can be overridden by environment
+    database: "snowflake_sample_data" # optional, can be overridden by environment
     schema: "TPCH_SF1"
     tables:
       - name: customer
